@@ -9,9 +9,6 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
@@ -94,45 +91,34 @@ session_start();
         </div>
         <div class="row">
             <div class="col-md-4" style="border:1px solid black;">
-                <a href="http://localhost/health_center/hc_admin_create.php">
+                <a href="http://localhost/health_center/hc_others_home.php">
                     <div class="box">
                         <div class="our-services settings">
                             <div class="icon"> <img src="images/medfile.png" style="width: 70px; height: 70px;"> </div>
-                            <h4>Create Record</h4>
+                            <h4>My Treatments</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-md-4" style="border:1px solid black;">
-                <a href="http://localhost/health_center/hc_admin_treatments.php">
-                    <div class="box">
-                        <div class="our-services settings">
-                            <div class="icon"> <img src="images/medfile.png" style="width: 70px; height: 70px;"> </div>
-                            <h4>Treatments</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4" style="border:1px solid black;">
-                <a href="http://localhost/health_center/hc_admin_lab.php">
+                <a href="http://localhost/health_center/hc_others_labs.php">
                     <div class="box">
                         <div class="our-services speedup">
                             <div class="icon"> <img src="images/microsope.png" style="width: 70px; height: 70px;">
                             </div>
-                            <h4>Lab Records</h4>
+                            <h4>Labs Available</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-md-4" style="border:1px solid black;">
-                <a href="http://localhost/health_center/hc_admin_enquiry.php">
+                <a href="http://localhost/health_center/hc_others_enquiry.php">
                     <div class="box">
                         <div class="our-services privacy">
                             <div class="icon"> <img src="images/enquiry.png" style="width: 70px; height: 70px;"> </div>
-                            <h4>Docotrs</h4>
+                            <h4>Enquiry</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
                         </div>
                     </div>
@@ -140,59 +126,38 @@ session_start();
             </div>
         </div>
     </div>
-    <!-- Create record form-->
+   
 
-    <div class="container">
-        <a href="http://localhost/health_center/hc_admin_add_lab.php">
-            <div>Add Lab Record</div>
-        </a>
-    </div>
-
-    <!--My Treatments Table-->
-    <div class="container" id="11" style="display: block;">
+    <!--Enquiry Table-->
+    <div class="container" id="33" style="display: block;">
         <table class="table">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">Test Center</th>
-                    <th scope="col">Contract Start Date</th>
-                    <th scope="col">Contract End Date</th>
-                    <th scope="col">Tests Available</th>
-                    <th scope="col">Edit</th>
-                    <th scope="col">Delete</th>
+                    <th scope="col">Query Type</th>
+                    <th scope="col">Contact Details</th>
+                    <th scope="col">Timings</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
               include 'connection.php';
-              $selectquery = "SELECT * FROM `hc_labs`";
+              $selectquery = "SELECT * FROM `hc_enquiry`";
               $query = mysqli_query($con,$selectquery);
               $nums = mysqli_num_rows($query);
               while($res = mysqli_fetch_array($query)){
                 
                 ?>
                 <tr>
-                    <td><?php echo $res['lab_name']; ?></td>
-                    <td><?php echo $res['cont_start_date']; ?></td>
-                    <td><?php echo $res['cont_end_date']; ?></td>
-                    <td><?php echo $res['tests']; ?></td>
-                    <td><a href="hc_admin_update_lab.php?id=<?php echo $res['lab_id']; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
-                    <td><a href="delete_lab.php?id=<?php echo $res['lab_id']; ?>"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
-                    
+                    <td><?php echo $res['query_type']; ?></td>
+                    <td><?php echo $res['timings']; ?></td>
+                    <td><?php echo $res['contact']; ?></td>
                 </tr>
                 <?php
               }
               ?>
-
-
             </tbody>
         </table>
     </div>
-
-    <!--Tests Available Table-->
-   
-
-    <!--Enquiry Table-->
-   
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
