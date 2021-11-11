@@ -165,24 +165,24 @@ session_start();
     <!-- Create record form-->
     <div class="container" id="44" style="display: block;">
         <form action="" method="POST" enctype="multipart/form-data">
-            
-             <label for="lname">ID:</label>
-            <label type="text" id="pnaem" name="cid" ><?php echo $arrdata['consult_id']; ?></label><br>
+
+            <label for="lname">ID:</label>
+            <label type="text" id="pnaem" name="cid"><?php echo $arrdata['consult_id']; ?></label><br>
             <label for="lname">Patient Name :</label>
             <label type="text" id="pnaem" name="pname"><?php echo $arrdata['patient_name']; ?></label><br>
             <label for="lname">Doctor Name :</label>
             <label type="text" id="dname" name="dname"><?php echo $arrdata['doctor_name']; ?></label><br>
             <label for="lname">Test Prescribed :</label>
-            <label type="text" id="tests" name="tests" ><?php echo $arrdata['test_prescribed']; ?></label><br>
+            <label type="text" id="tests" name="tests"><?php echo $arrdata['test_prescribed']; ?></label><br>
             <label for="lname">Date :</label>
             <label type="text" id="tests" name="date"><?php echo $arrdata['date']; ?></label><br>
             <label for="lname">Status</label>
-            <label type="text" id="status" name="status" ><?php echo $arrdata['status']; ?></label><br>
+            <label type="text" id="status" name="status"><?php echo $arrdata['status']; ?></label><br>
             <label for="lname">Previous File :</label>
             <td><a href="uploads/<?php echo $arrdata['file'] ?>" target="_blank">view file</a></td><br>
             <label for="lname">Upload New :</label>
-            <label type="file" name="file" id="pdf_file" accept="application/pdf"?><br>
-            <input type="submit" name="submit" value="Submit">
+            <label type="file" name="file" id="pdf_file" accept="application/pdf" ?><br>
+                <input type="submit" name="submit" value="Submit">
         </form>
     </div>
 
