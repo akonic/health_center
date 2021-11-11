@@ -128,7 +128,7 @@ session_start();
                 </a>
             </div>
             <div class="col-md-4" style="border:1px solid black;">
-                <a href="http://localhost/health_center/hc_admin_enquiry.php">
+                <a href="http://localhost/health_center/hc_admin_doctor.php">
                     <div class="box">
                         <div class="our-services privacy">
                             <div class="icon"> <img src="images/enquiry.png" style="width: 70px; height: 70px;"> </div>

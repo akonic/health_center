@@ -111,7 +111,7 @@ session_start();
                         <div class="our-services speedup">
                             <div class="icon"> <img src="images/microsope.png" style="width: 70px; height: 70px;">
                             </div>
-                            <h4>Labs Available</h4>
+                            <h4>Tests Available</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                         </div>
                     </div>
