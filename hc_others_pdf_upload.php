@@ -161,7 +161,7 @@ session_start();
      }
     
   }
-?>
+  ?>
     <!-- Create record form-->
     <div class="container" id="44" style="display: block;">
         <form action="" method="POST" enctype="multipart/form-data">
